@@ -1,1 +1,1 @@
-# small_games
+# mini_games
