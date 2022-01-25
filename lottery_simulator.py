@@ -79,7 +79,7 @@ class LotterySimulator:
         print('-------------------------')
 
 
-ls = LottoSimulator()
+ls = LotterySimulator()
 
 ls.get_numbers()
 ls.print_user_numbers()
