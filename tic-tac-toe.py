@@ -1,23 +1,27 @@
+import random
+
 
 class TicTacToe:
     def __init__(self):
         self.board = [' ' for i in range(10)]
         self.game_over = False
-
+        self.user_letter_choice = ""
+        self.empty_pos_length = len([i for i in self.board if i == ' '])  # not working yet
     def game_loop(self):
-        while self.game_over == False:
+        while not self.game_over:
             self.print_board()
             self.user_input()
-            if self.isWinner("X"):
+            self.cpu_player_handler()
+            if self.check_winner("X"):
                 self.print_board()
                 print('Player X won!')
                 self.game_over = True
-            elif self.isWinner("O"):
+            elif self.check_winner("O"):
                 self.print_board()
                 print('Player O won!')
                 self.game_over = True
 
-    def isWinner(self, player):
+    def check_winner(self, player):
         return (self.board[7] == player and self.board[8] == player and self.board[9] == player) or (
                 self.board[4] == player and self.board[5] == player and self.board[6] == player) or (
                 self.board[1] == player and self.board[2] == player and self.board[3] == player) or (
@@ -38,6 +42,11 @@ class TicTacToe:
     def check_if_space_is_free(self, position):
         return self.board[position] == ' '
 
+    def user_letter(self):
+        letter_input = input('Choose your letter ( X or O ): ').upper()
+        self.user_letter_choice = letter_input
+        print(letter_input)
+
     def user_input(self):
         user_input = input("Choose your position (ex. X,6): ").upper()
         user_input_split = user_input.split(',')
@@ -51,7 +60,19 @@ class TicTacToe:
             print("Position is taken!")
             print('')
 
+    def cpu_player_handler(self):
+        if self.user_letter_choice == "X":
+            random_position = random.randrange(1, self.empty_pos_length-1)
+            if self.check_if_space_is_free(random_position):
+                self.insert_letter("O", random_position)
+
+        elif self.user_letter_choice == "O":
+            random_position = random.randrange(1, self.empty_pos_length-1)
+            if self.check_if_space_is_free(random_position):
+                self.insert_letter("X", random_position)
+
 
 ttt = TicTacToe()
+ttt.user_letter()
 ttt.game_loop()
 
