@@ -29,12 +29,12 @@ class TicTacToe:
     def check_winner(self, player):
         return (self.board[7] == player and self.board[8] == player and self.board[9] == player) or (
                 self.board[4] == player and self.board[5] == player and self.board[6] == player) or (
-                self.board[1] == player and self.board[2] == player and self.board[3] == player) or (
-                self.board[1] == player and self.board[4] == player and self.board[7] == player) or (
-                self.board[2] == player and self.board[5] == player and self.board[8] == player) or (
-                self.board[3] == player and self.board[6] == player and self.board[9] == player) or (
-                self.board[1] == player and self.board[5] == player and self.board[9] == player) or (
-                self.board[3] == player and self.board[5] == player and self.board[7] == player)
+                       self.board[1] == player and self.board[2] == player and self.board[3] == player) or (
+                       self.board[1] == player and self.board[4] == player and self.board[7] == player) or (
+                       self.board[2] == player and self.board[5] == player and self.board[8] == player) or (
+                       self.board[3] == player and self.board[6] == player and self.board[9] == player) or (
+                       self.board[1] == player and self.board[5] == player and self.board[9] == player) or (
+                       self.board[3] == player and self.board[5] == player and self.board[7] == player)
 
     def print_board(self):
         print(' ' + self.board[1] + ' | ' + self.board[2] + ' | ' + self.board[3])
@@ -48,23 +48,77 @@ class TicTacToe:
         return self.board[position] == ' '
 
     def user_letter(self):
-        letter_input = input('Choose your letter ( X or O ): ').upper()
-        self.user_letter_choice = letter_input
-        print(f"You play as {letter_input}")
+        right_input = False
+        while not right_input:
+            letter_input = input('Choose your letter ( X or O ): ').upper()
+            if letter_input not in ['X', 'O']:
+                print('Wrong input! (It is not X or O)')
+                continue
+            right_input = True
+            self.user_letter_choice = letter_input
+            print(f"You play as {letter_input}")
 
     def user_input(self):
-        user_input = input("Choose your position (ex. X,6): ").upper()
-        user_input_split = user_input.split(',')
-        
-        get_letter = user_input_split[0]
-        get_position = int(user_input_split[1])
-        if self.check_if_space_is_free(get_position):
-            self.insert_letter(get_letter, get_position)
-            self.player_move = 1
-        else:
-            print('')
-            print("Position is taken!")
-            print('')
+        possible_positions = None
+        right_input = False
+        if self.user_letter_choice == "X":
+            possible_positions = [
+                'X,1',
+                'X,2',
+                'X,3',
+                'X,4',
+                'X,5',
+                'X,6',
+                'X,7',
+                'X,8',
+                'X,9',
+            ]
+            while not right_input:
+                user_input = input("Choose your position (ex. X,6): ").upper()
+                if user_input not in possible_positions:
+                    print('Wrong input!')
+                    continue
+                right_input = True
+                user_input_split = user_input.split(',')
+
+                get_letter = user_input_split[0]
+                get_position = int(user_input_split[1])
+                if self.check_if_space_is_free(get_position):
+                    self.insert_letter(get_letter, get_position)
+                    self.player_move = 1
+                else:
+                    print('')
+                    print("Position is taken!")
+                    print('')
+        elif self.user_letter_choice == "O":
+            possible_positions = [
+                'O,1',
+                'O,2',
+                'O,3',
+                'O,4',
+                'O,5',
+                'O,6',
+                'O,7',
+                'O,8',
+                'O,9',
+            ]
+            while not right_input:
+                user_input = input("Choose your position (ex. O,6): ").upper()
+                if user_input not in possible_positions:
+                    print('Wrong input!')
+                    continue
+                right_input = True
+                user_input_split = user_input.split(',')
+
+                get_letter = user_input_split[0]
+                get_position = int(user_input_split[1])
+                if self.check_if_space_is_free(get_position):
+                    self.insert_letter(get_letter, get_position)
+                    self.player_move = 1
+                else:
+                    print('')
+                    print("Position is taken!")
+                    print('')
 
     def cpu_player_handler(self):
         possible_moves = [x for x, letter in enumerate(self.board) if letter == ' ' and x != 0]
