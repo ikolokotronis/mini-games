@@ -6,7 +6,8 @@ class TicTacToe:
         self.board = [' ' for i in range(10)]
         self.game_over = False
         self.user_letter_choice = ""
-        self.empty_pos_length = len([i for i in self.board if i == ' '])  # not working yet
+        self.first_move = 0
+
     def game_loop(self):
         while not self.game_over:
             self.print_board()
@@ -45,7 +46,7 @@ class TicTacToe:
     def user_letter(self):
         letter_input = input('Choose your letter ( X or O ): ').upper()
         self.user_letter_choice = letter_input
-        print(letter_input)
+        print(f"You play as {letter_input}")
 
     def user_input(self):
         user_input = input("Choose your position (ex. X,6): ").upper()
@@ -55,24 +56,62 @@ class TicTacToe:
         get_position = int(user_input_split[1])
         if self.check_if_space_is_free(get_position):
             self.insert_letter(get_letter, get_position)
+            self.first_move = 1
         else:
             print('')
             print("Position is taken!")
             print('')
 
     def cpu_player_handler(self):
-        if self.user_letter_choice == "X":
-            random_position = random.randrange(1, self.empty_pos_length-1)
-            if self.check_if_space_is_free(random_position):
-                self.insert_letter("O", random_position)
+        possible_moves = [x for x, letter in enumerate(self.board) if letter == ' ' and x != 0]
+        corners = [1, 3, 7, 9]
+        middle = 5
+        leftovers = [2, 4, 6, 8]
+        move = 0
 
-        elif self.user_letter_choice == "O":
-            random_position = random.randrange(1, self.empty_pos_length-1)
-            if self.check_if_space_is_free(random_position):
-                self.insert_letter("X", random_position)
+        if self.user_letter_choice == "X" and self.first_move == 1:
+
+            for i in possible_moves:
+
+                if i in corners:
+                    random_choice = random.choice(corners)
+                    while move != 1 and self.check_if_space_is_free(random_choice):
+                        self.insert_letter("O", random_choice)
+                        move = 1
+
+                elif i == middle:
+                    while move != 1 and self.check_if_space_is_free(middle):
+                        self.insert_letter("O", middle)
+                        move = 1
+
+                elif i in leftovers:
+                    random_choice = random.choice(leftovers)
+                    while move != 1 and self.check_if_space_is_free(random_choice):
+                        self.insert_letter("O", random_choice)
+                        move = 1
+
+        if self.user_letter_choice == "O" and self.first_move == 1:
+
+            for i in possible_moves:
+
+                if i in corners:
+                    random_choice = random.choice(corners)
+                    while move != 1 and self.check_if_space_is_free(random_choice):
+                        self.insert_letter("X", random_choice)
+                        move = 1
+
+                elif i == middle:
+                    while move != 1 and self.check_if_space_is_free(middle):
+                        self.insert_letter("X", middle)
+                        move = 1
+
+                elif i in leftovers:
+                    random_choice = random.choice(leftovers)
+                    while move != 1 and self.check_if_space_is_free(random_choice):
+                        self.insert_letter("X", random_choice)
+                        move = 1
 
 
 ttt = TicTacToe()
 ttt.user_letter()
 ttt.game_loop()
-
