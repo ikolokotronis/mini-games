@@ -6,13 +6,17 @@ class TicTacToe:
         self.board = [' ' for i in range(10)]
         self.game_over = False
         self.user_letter_choice = ""
-        self.first_move = 0
+        self.player_move = 0
 
     def game_loop(self):
         while not self.game_over:
             self.print_board()
             self.user_input()
             self.cpu_player_handler()
+            free_space = len([i for i in self.board if i == " "])
+            if free_space == 0:
+                print("Tie! No one wins")
+                self.game_over = True
             if self.check_winner("X"):
                 self.print_board()
                 print('Player X won!')
@@ -56,7 +60,7 @@ class TicTacToe:
         get_position = int(user_input_split[1])
         if self.check_if_space_is_free(get_position):
             self.insert_letter(get_letter, get_position)
-            self.first_move = 1
+            self.player_move = 1
         else:
             print('')
             print("Position is taken!")
@@ -69,28 +73,136 @@ class TicTacToe:
         leftovers = [2, 4, 6, 8]
         move = 0
 
-        if self.user_letter_choice == "X" and self.first_move == 1:
+        if self.user_letter_choice == "X" and self.player_move == 1:
 
             for i in possible_moves:
 
-                if i in corners:
+                # winning case
+                if self.board[7] == "O" and self.board[8] == "O" and self.check_if_space_is_free(9) and move == 0:
+                    self.insert_letter("O", 9)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[4] == "O" and self.board[5] == "O" and self.check_if_space_is_free(6) and move == 0:
+                    self.insert_letter("O", 6)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[1] == "O" and self.board[2] == "O" and self.check_if_space_is_free(3) and move == 0:
+                    self.insert_letter("O", 3)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[1] == "O" and self.board[4] == "O" and self.check_if_space_is_free(7) and move == 0:
+                    self.insert_letter("O", 7)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[2] == "O" and self.board[5] == "O" and self.check_if_space_is_free(8) and move == 0:
+                    self.insert_letter("O", 8)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[3] == "O" and self.board[6] == "O" and self.check_if_space_is_free(9) and move == 0:
+                    self.insert_letter("O", 9)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[1] == "O" and self.board[5] == "O" and self.check_if_space_is_free(9) and move == 0:
+                    self.insert_letter("O", 9)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[7] == "O" and self.board[5] == "O" and self.check_if_space_is_free(3) and move == 0:
+                    self.insert_letter("O", 3)
+                    move = 1
+                    self.player_move = 0
+
+                # backwards winning case
+                elif self.board[9] == "O" and self.board[8] == "O" and self.check_if_space_is_free(7) and move == 0:
+                    self.insert_letter("O", 7)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[6] == "O" and self.board[5] == "O" and self.check_if_space_is_free(4) and move == 0:
+                    self.insert_letter("O", 4)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[3] == "O" and self.board[2] == "O" and self.check_if_space_is_free(1) and move == 0:
+                    self.insert_letter("O", 1)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[7] == "O" and self.board[4] == "O" and self.check_if_space_is_free(1) and move == 0:
+                    self.insert_letter("O", 1)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[8] == "O" and self.board[5] == "O" and self.check_if_space_is_free(2) and move == 0:
+                    self.insert_letter("O", 2)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[9] == "O" and self.board[6] == "O" and self.check_if_space_is_free(3) and move == 0:
+                    self.insert_letter("O", 3)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[9] == "O" and self.board[5] == "O" and self.check_if_space_is_free(1) and move == 0:
+                    self.insert_letter("O", 1)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[3] == "O" and self.board[5] == "O" and self.check_if_space_is_free(7) and move == 0:
+                    self.insert_letter("O", 7)
+                    move = 1
+                    self.player_move = 0
+
+                # middle winning case
+                elif self.board[9] == "O" and self.board[7] == "O" and self.check_if_space_is_free(8) and move == 0:
+                    self.insert_letter("O", 8)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[6] == "O" and self.board[4] == "O" and self.check_if_space_is_free(5) and move == 0:
+                    self.insert_letter("O", 5)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[3] == "O" and self.board[1] == "O" and self.check_if_space_is_free(2) and move == 0:
+                    self.insert_letter("O", 2)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[7] == "O" and self.board[1] == "O" and self.check_if_space_is_free(4) and move == 0:
+                    self.insert_letter("O", 4)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[8] == "O" and self.board[2] == "O" and self.check_if_space_is_free(5) and move == 0:
+                    self.insert_letter("O", 5)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[9] == "O" and self.board[3] == "O" and self.check_if_space_is_free(6) and move == 0:
+                    self.insert_letter("O", 6)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[9] == "O" and self.board[1] == "O" and self.check_if_space_is_free(5) and move == 0:
+                    self.insert_letter("O", 5)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[3] == "O" and self.board[7] == "O" and self.check_if_space_is_free(5) and move == 0:
+                    self.insert_letter("O", 5)
+                    move = 1
+                    self.player_move = 0
+
+                # try to take the corners
+                elif i in corners:
                     random_choice = random.choice(corners)
                     while move != 1 and self.check_if_space_is_free(random_choice):
                         self.insert_letter("O", random_choice)
                         move = 1
+                        self.player_move = 0
 
+                # try to take the middle
                 elif i == middle:
                     while move != 1 and self.check_if_space_is_free(middle):
                         self.insert_letter("O", middle)
                         move = 1
+                        self.player_move = 0
 
+                # try to take the leftovers
                 elif i in leftovers:
                     random_choice = random.choice(leftovers)
                     while move != 1 and self.check_if_space_is_free(random_choice):
                         self.insert_letter("O", random_choice)
                         move = 1
+                        self.player_move = 0
 
-        if self.user_letter_choice == "O" and self.first_move == 1:
+        if self.user_letter_choice == "O" and self.player_move == 1:
 
             for i in possible_moves:
 
