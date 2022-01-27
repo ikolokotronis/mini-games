@@ -73,11 +73,12 @@ class TicTacToe:
         leftovers = [2, 4, 6, 8]
         move = 0
 
+        # When player chooses to play as X
         if self.user_letter_choice == "X" and self.player_move == 1:
 
             for i in possible_moves:
 
-                # winning case
+                # normal winning case
                 if self.board[7] == "O" and self.board[8] == "O" and self.check_if_space_is_free(9) and move == 0:
                     self.insert_letter("O", 9)
                     move = 1
@@ -202,26 +203,135 @@ class TicTacToe:
                         move = 1
                         self.player_move = 0
 
+        # When player chooses to play as O
         if self.user_letter_choice == "O" and self.player_move == 1:
 
             for i in possible_moves:
 
-                if i in corners:
+                # normal winning case
+                if self.board[7] == "X" and self.board[8] == "X" and self.check_if_space_is_free(9) and move == 0:
+                    self.insert_letter("X", 9)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[4] == "X" and self.board[5] == "X" and self.check_if_space_is_free(6) and move == 0:
+                    self.insert_letter("X", 6)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[1] == "X" and self.board[2] == "X" and self.check_if_space_is_free(3) and move == 0:
+                    self.insert_letter("X", 3)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[1] == "X" and self.board[4] == "X" and self.check_if_space_is_free(7) and move == 0:
+                    self.insert_letter("X", 7)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[2] == "X" and self.board[5] == "X" and self.check_if_space_is_free(8) and move == 0:
+                    self.insert_letter("X", 8)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[3] == "X" and self.board[6] == "X" and self.check_if_space_is_free(9) and move == 0:
+                    self.insert_letter("X", 9)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[1] == "X" and self.board[5] == "X" and self.check_if_space_is_free(9) and move == 0:
+                    self.insert_letter("X", 9)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[7] == "X" and self.board[5] == "X" and self.check_if_space_is_free(3) and move == 0:
+                    self.insert_letter("X", 3)
+                    move = 1
+                    self.player_move = 0
+
+                # backwards winning case
+                elif self.board[9] == "X" and self.board[8] == "X" and self.check_if_space_is_free(7) and move == 0:
+                    self.insert_letter("X", 7)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[6] == "X" and self.board[5] == "X" and self.check_if_space_is_free(4) and move == 0:
+                    self.insert_letter("X", 4)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[3] == "X" and self.board[2] == "X" and self.check_if_space_is_free(1) and move == 0:
+                    self.insert_letter("X", 1)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[7] == "X" and self.board[4] == "X" and self.check_if_space_is_free(1) and move == 0:
+                    self.insert_letter("X", 1)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[8] == "X" and self.board[5] == "X" and self.check_if_space_is_free(2) and move == 0:
+                    self.insert_letter("X", 2)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[9] == "X" and self.board[6] == "X" and self.check_if_space_is_free(3) and move == 0:
+                    self.insert_letter("X", 3)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[9] == "X" and self.board[5] == "X" and self.check_if_space_is_free(1) and move == 0:
+                    self.insert_letter("X", 1)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[3] == "X" and self.board[5] == "X" and self.check_if_space_is_free(7) and move == 0:
+                    self.insert_letter("X", 7)
+                    move = 1
+                    self.player_move = 0
+
+                # middle winning case
+                elif self.board[9] == "X" and self.board[7] == "X" and self.check_if_space_is_free(8) and move == 0:
+                    self.insert_letter("X", 8)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[6] == "X" and self.board[4] == "X" and self.check_if_space_is_free(5) and move == 0:
+                    self.insert_letter("X", 5)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[3] == "X" and self.board[1] == "X" and self.check_if_space_is_free(2) and move == 0:
+                    self.insert_letter("X", 2)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[7] == "X" and self.board[1] == "X" and self.check_if_space_is_free(4) and move == 0:
+                    self.insert_letter("X", 4)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[8] == "X" and self.board[2] == "X" and self.check_if_space_is_free(5) and move == 0:
+                    self.insert_letter("X", 5)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[9] == "X" and self.board[3] == "X" and self.check_if_space_is_free(6) and move == 0:
+                    self.insert_letter("X", 6)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[9] == "X" and self.board[1] == "O" and self.check_if_space_is_free(5) and move == 0:
+                    self.insert_letter("X", 5)
+                    move = 1
+                    self.player_move = 0
+                elif self.board[3] == "X" and self.board[7] == "X" and self.check_if_space_is_free(5) and move == 0:
+                    self.insert_letter("X", 5)
+                    move = 1
+                    self.player_move = 0
+
+                # try to take the corners
+                elif i in corners:
                     random_choice = random.choice(corners)
                     while move != 1 and self.check_if_space_is_free(random_choice):
                         self.insert_letter("X", random_choice)
                         move = 1
+                        self.player_move = 0
 
+                # try to take the middle
                 elif i == middle:
                     while move != 1 and self.check_if_space_is_free(middle):
                         self.insert_letter("X", middle)
                         move = 1
+                        self.player_move = 0
 
+                # try to take the leftovers
                 elif i in leftovers:
                     random_choice = random.choice(leftovers)
                     while move != 1 and self.check_if_space_is_free(random_choice):
                         self.insert_letter("X", random_choice)
                         move = 1
+                        self.player_move = 0
 
 
 ttt = TicTacToe()
