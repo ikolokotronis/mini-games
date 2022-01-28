@@ -2,8 +2,6 @@ import random
 
 
 class DiceGenerator:
-    def __init__(self):
-        pass
 
     @staticmethod
     def welcome():
@@ -42,6 +40,19 @@ class DiceGenerator:
 
         ]
         return dices
+
+    def get_dice(self):
+        right_input = 0
+        while right_input == 0:
+            user_input = input('Choose your dice: ').upper()
+            for dice in self.possible_dices():
+                if dice in user_input:
+                    user_input_split = user_input.split('D')
+                    right_input = 1
+                    return user_input_split
+            else:
+                print('Wrong input!')
+                continue
 
     def dice_handler(self):
         dice = self.get_dice()
@@ -84,19 +95,6 @@ class DiceGenerator:
             dice_type = int(dice[1])
             result = random.randint(1, dice_type)
             print(result)
-
-    def get_dice(self):
-        right_input = 0
-        while right_input == 0:
-            user_input = input('Choose your dice: ').upper()
-            for dice in self.possible_dices():
-                if dice in user_input:
-                    user_input_split = user_input.split('D')
-                    right_input = 1
-                    return user_input_split
-            else:
-                print('Wrong input!')
-                continue
 
 
 dg = DiceGenerator()
