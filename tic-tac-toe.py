@@ -8,6 +8,17 @@ class TicTacToe:
         self.user_letter_choice = ""
         self.player_move = 0
 
+    def welcome(self):
+        print('')
+        print('Welcome to Tic Tac Toe! In this game besides the standard Tic Tac Toe rules '
+              'you will have to specify the position of the letter you chose.')
+        print("Here's how the positions are numbered: ")
+        print(' ' + '1' + ' | ' + '2' + ' | ' + '3')
+        print(' ' + '4' + ' | ' + '5' + ' | ' + '6')
+        print(' ' + '7' + ' | ' + '8' + ' | ' + '9')
+        print('Press enter to continue')
+        input('')
+
     def game_loop(self):
         while not self.game_over:
             self.print_board()
@@ -389,5 +400,6 @@ class TicTacToe:
 
 
 ttt = TicTacToe()
+ttt.welcome()
 ttt.user_letter()
 ttt.game_loop()
