@@ -1,9 +1,5 @@
 import random
 
-print('Try to guess the number (1-100)')
-print('Press enter to continue')
-input()
-
 
 def main_function():
     """
@@ -12,6 +8,9 @@ def main_function():
     :rtype: int
     :return: given number as int
     """
+    print('Try to guess the number (1-100)')
+    print('Press enter to continue')
+    input()
     winning_number = random.randint(1, 100)
     attempts_count = 0
     while True:
