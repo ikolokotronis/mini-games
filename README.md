@@ -53,17 +53,22 @@ The classic Tic Tac Toe game
 ![](gifs/tic-tac-toe.gif)
 
 #### Lottery simulator
-A lottery simulator (to win you have to hit six numbers)  
+Type six numbers in range from 1 to 49  
+Press enter to get the result  
+You can get from 1 to 6 hits, a winning situation is when you get 6 hits.  
 ![](gifs/lottery-simulator.gif)
 
 #### Dice generator
-A custom dice roller  
+A custom dice generator, which rolls a dice based on your parameters.  
+Possible dices: D3, D4, D6, D8, D10, D12, D20, D100  
+Formula: yDx+b (ex. 2D6+10)  
 ![](gifs/dice-generator.gif)
 
 #### Guess the number
-A guessing game  
+ To win you have to guess the number in max. 10 attempts.  
 ![](gifs/guess-the-number.gif)
 
 #### Guess the number 2
-A guessing game like the previous one but in reverse  
+The AI tries to guess a number chosen by you  
+Think of a number, and based on the appearing number, type 'too much', 'too low' or in a winning situation 'you won'.
 ![](gifs/guess_the_number_2.gif)    
