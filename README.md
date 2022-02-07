@@ -31,7 +31,7 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how to make the project run locally.
+Here is how to make the games run locally.
 
 ### Installation
 
