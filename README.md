@@ -19,7 +19,7 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#games">Game demo's</a></li>
+    <li><a href="#game-demos">Game demo's</a></li>
   </ol>
 </details>
 
