@@ -52,8 +52,23 @@ This is an example of how to make the project run locally.
 ## Games
 #### Tic Tac Toe
 The classic Tic Tac Toe game  
+![](gifs/tic-tac-toe.gif)
 
-    
+#### Lottery simulator
+A lottery simulator (to win you have to hit six numbers)  
+![](gifs/lottery-simulator.gif)
+
+#### Dice generator
+A custom dice roller  
+![](gifs/dice-generator.gif)
+
+#### Guess the number
+A guessing game  
+![](gifs/guess-the-number.gif)
+
+#### Guess the number 2
+A guessing game like the previous one but in reverse  
+![](gifs/guess_the_number_2.gif)    
 
 
 
