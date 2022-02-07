@@ -69,26 +69,3 @@ A guessing game
 #### Guess the number 2
 A guessing game like the previous one but in reverse  
 ![](gifs/guess_the_number_2.gif)    
-
-
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-You could use this as a place to learn more about python (by inspecting the game codes) or just to try out the games.
-
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- CONTACT -->
-## Contact
-
-Ioannis Kolokotronis - ioanniskolokotronis1@gmail.com
-
-Project Link: [https://github.com/ikolokotronis/mini_games]
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
