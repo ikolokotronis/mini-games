@@ -3,7 +3,7 @@
   <h3 align="center">Mini games</h3>
 
   <p align="center">
-    Some mini console games made with python!
+    Some console games made with python!
   </p>
 </div>
 
