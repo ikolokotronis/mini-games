@@ -76,7 +76,7 @@ A guessing game like the previous one but in reverse
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-You could use this as a place to learn more about python or just to try out the games.
+You could use this as a place to learn more about python (by inspecting the game codes) or just to try out the games.
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
