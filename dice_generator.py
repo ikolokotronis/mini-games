@@ -5,7 +5,7 @@ class DiceGenerator:
 
     @staticmethod
     def welcome():
-        print('Welcome to dice roll generator!')
+        print('Welcome to dice generator!')
         print('-----------')
         print('Possible dices: D3, D4, D6, D8, D10, D12, D20, D100')
         print('-----------')
@@ -42,13 +42,13 @@ class DiceGenerator:
         return dices
 
     def get_dice(self):
-        right_input = 0
-        while right_input == 0:
+        right_input = False
+        while not right_input:
             user_input = input('Choose your dice: ').upper()
             for dice in self.possible_dices():
                 if dice in user_input:
                     user_input_split = user_input.split('D')
-                    right_input = 1
+                    right_input = True
                     return user_input_split
             else:
                 print('Wrong input!')
