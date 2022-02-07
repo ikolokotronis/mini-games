@@ -10,8 +10,8 @@ class TicTacToe:
 
     def welcome(self):
         print('')
-        print('Welcome to Tic Tac Toe! In this game besides the standard Tic Tac Toe rules '
-              'you will have to specify the position of the letter you chose.')
+        print('Welcome to Tic Tac Toe! In order to play correctly, '
+              'you will have to specify the position you want to place your letter in.')
         print("Here's how the positions are numbered: ")
         print(' ' + '1' + ' | ' + '2' + ' | ' + '3')
         print(' ' + '4' + ' | ' + '5' + ' | ' + '6')
