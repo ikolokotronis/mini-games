@@ -19,9 +19,7 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#games">Games</a></li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#games">Game demo's</a></li>
   </ol>
 </details>
 
@@ -49,7 +47,7 @@ Here is how to make the games run locally.
 
 
 
-## Games
+## Game demo's
 #### Tic Tac Toe
 The classic Tic Tac Toe game  
 ![](gifs/tic-tac-toe.gif)
