@@ -3,7 +3,7 @@
   <h3 align="center">Mini games</h3>
 
   <p align="center">
-    Some mini console games made with python!
+    Some console games made with python!
   </p>
 </div>
 
@@ -19,9 +19,7 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#games">Games</a></li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#game-demos">Game demo's</a></li>
   </ol>
 </details>
 
@@ -31,7 +29,7 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how to make the project run locally.
+Here is how to make the games run locally.
 
 ### Installation
 
@@ -49,31 +47,28 @@ This is an example of how to make the project run locally.
 
 
 
-## Games
+## Game demo's
 #### Tic Tac Toe
 The classic Tic Tac Toe game  
+![](gifs/tic-tac-toe.gif)
 
-    
+#### Lottery simulator
+Type six numbers in range from 1 to 49  
+Press enter to get the result  
+You can get from 1 to 6 hits, a winning situation is when you get 6 hits.  
+![](gifs/lottery-simulator.gif)
 
+#### Dice generator
+A custom dice generator, which rolls a dice based on your parameters.  
+Possible dices: D3, D4, D6, D8, D10, D12, D20, D100  
+Formula: yDx+b (ex. 2D6+10)  
+![](gifs/dice-generator.gif)
 
+#### Guess the number
+ To win you have to guess the number in max. 10 attempts.  
+![](gifs/guess-the-number.gif)
 
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-You could use this as a place to learn more about python or just to try out the games.
-
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- CONTACT -->
-## Contact
-
-Ioannis Kolokotronis - ioanniskolokotronis1@gmail.com
-
-Project Link: [https://github.com/ikolokotronis/mini_games]
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
+#### Guess the number 2
+The AI tries to guess a number chosen by you  
+Think of a number, and based on the appearing number, type 'too much', 'too low' or in a winning situation 'you won'.
+![](gifs/guess_the_number_2.gif)    
