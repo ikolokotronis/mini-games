@@ -4,6 +4,15 @@
 
   <p align="center">
     Some console games made with python!
+    <br />
+    <a href="https://github.com/ikolokotronis/mini_games"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="#game-demos">View Demo's</a>
+    ·
+    <a href="https://github.com/ikolokotronis/mini_games/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/ikolokotronis/mini_games/issues">Request Feature</a>
   </p>
 </div>
 
