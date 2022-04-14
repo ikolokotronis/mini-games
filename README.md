@@ -3,16 +3,7 @@
   <h3 align="center">Mini games</h3>
 
   <p align="center">
-    Some console games made with python!
-    <br />
-    <a href="https://github.com/ikolokotronis/mini_games"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
     <a href="#game-demos">View Demo's</a>
-    ·
-    <a href="https://github.com/ikolokotronis/mini_games/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/ikolokotronis/mini_games/issues">Request Feature</a>
   </p>
 </div>
 
@@ -38,7 +29,7 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Here is how to make the games run locally.
+This is how to make the games run locally.
 
 ### Installation
 
@@ -78,6 +69,6 @@ Formula: yDx+b (ex. 2D6+10)
 ![](gifs/guess-the-number.gif)
 
 #### Guess the number 2
-The AI tries to guess a number chosen by you  
+The program tries to guess a number chosen by you  
 Think of a number, and based on the appearing number, type 'too much', 'too low' or in a winning situation 'you won'.
 ![](gifs/guess_the_number_2.gif)    
