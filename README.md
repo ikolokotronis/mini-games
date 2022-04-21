@@ -8,6 +8,9 @@
 </div>
 
 
+A few games made for the purpose of learning Python.
+
+
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -61,7 +64,7 @@ You can get from 1 to 6 hits, a winning situation is when you get 6 hits.
 #### Dice generator
 A custom dice generator, which rolls a dice based on your parameters.  
 Possible dices: D3, D4, D6, D8, D10, D12, D20, D100  
-Formula: yDx+b (ex. 2D6+10)  
+Formula: a[DICE]+b (e.g. 2D6+10)  
 ![](gifs/dice-generator.gif)
 
 #### Guess the number
