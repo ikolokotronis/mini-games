@@ -64,7 +64,8 @@ You can get from 1 to 6 hits, a winning situation is when you get 6 hits.
 #### Dice generator
 A custom dice generator, which rolls a dice based on your parameters.  
 Possible dices: D3, D4, D6, D8, D10, D12, D20, D100  
-Formula: a[DICE]+b (e.g. 2D6+10)  
+Formula: a[DICE]+b (e.g. 2D6+10)   
+Example shown below represents throwing a six-sided cube two times and adding 10 to the result.  
 ![](gifs/dice-generator.gif)
 
 #### Guess the number
@@ -73,5 +74,5 @@ Formula: a[DICE]+b (e.g. 2D6+10)
 
 #### Guess the number 2
 The program tries to guess a number chosen by you  
-Think of a number, and based on the appearing number, type 'too much', 'too low' or in a winning situation 'you won'.
+Think of a number, and based on the appearing number, type 'too much', 'too low' or in a winning situation 'you won'.  
 ![](gifs/guess_the_number_2.gif)    
