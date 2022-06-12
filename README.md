@@ -3,7 +3,7 @@
   <h3 align="center">Mini games</h3>
 
   <p align="center">
-    <a href="#game-demos">View Demo's</a>
+    <a href="#game-demos">View Demos</a>
   </p>
 </div>
 
@@ -50,7 +50,7 @@ This is how to make the games run locally.
 
 
 
-## Game demo's
+## Game demos
 #### Tic Tac Toe
 The classic Tic Tac Toe game  
 ![](gifs/tic-tac-toe.gif)
